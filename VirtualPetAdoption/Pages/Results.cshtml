@@ -1,0 +1,28 @@
+@page
+@model VirtualPetAdoption.Pages.ResultsModel
+@{
+    ViewData["Title"] = "Your Pet Match";
+}
+
+<div class="container text-center">
+    <div class="alert alert-success mt-4">
+        <h2>Congratulations, @Model.UserName!</h2>
+        <p>You've been matched with @Model.Pet.Name!</p>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <img src="@Model.Pet.ImageUrl" class="card-img-top" alt="@Model.Pet.Name" style="max-height: 300px; object-fit: contain;">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Pet.Name - @Model.Pet.Species</h5>
+                    <p class="card-text">@Model.Pet.Description</p>
+                    <p><strong>Energy Level:</strong> @Model.Pet.EnergyLevel/5</p>
+                    
+                    <a asp-page="./Index" class="btn btn-primary mt-3">Return Home</a>
+                    <a asp-page="./Quiz" class="btn btn-secondary mt-2">Retake Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

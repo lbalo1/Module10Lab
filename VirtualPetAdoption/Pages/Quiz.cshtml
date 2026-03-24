@@ -1,0 +1,31 @@
+@page
+@model VirtualPetAdoption.Pages.QuizModel
+@{
+    ViewData["Title"] = "Pet Matching Quiz";
+}
+
+<div class="container">
+    <h2>Find Your Perfect Pet Match</h2>
+    <p>Answer this quick question to find your ideal pet companion!</p>
+    
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">What's your name?</label>
+            <input asp-for="Name" class="form-control" required />
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">How much energy do you have for a pet?</label>
+            <select asp-for="EnergyPreference" class="form-select" required>
+                <option value="">Select one...</option>
+                <option value="1">Very Low - I prefer a calm companion</option>
+                <option value="2">Low - Some activity is fine</option>
+                <option value="3">Moderate - A balanced energy level</option>
+                <option value="4">High - I like active pets</option>
+                <option value="5">Very High - I want an energetic pet!</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Find My Pet Match</button>
+    </form>
+</div>
